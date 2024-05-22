@@ -10,6 +10,13 @@ public:
     void EDF_Scheduling() override;
     void F_B_Scheduling() override;
     void MLFQ_Scheduling() override;
+
+    struct Process {
+        int id;
+        int weight;
+        int burstTime;
+        int remainingTime;
+    };
 };
 
 #endif // WRR_SCHEDULER_H
