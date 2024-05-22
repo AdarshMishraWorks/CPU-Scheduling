@@ -1,17 +1,17 @@
-#include "MLFQScheduler.h"
+#include "MLQScheduler.h"
 
-void MLFQScheduler::WRR_Scheduling() {
+void MLQScheduler::WRR_Scheduling() {
     std::cout << "Weighted Round Robin Scheduling\n";
 }
 
-void MLFQScheduler::EDF_Scheduling() {
+void MLQScheduler::EDF_Scheduling() {
     std::cout << "EDF Scheduling\n";
 }
 
-void MLFQScheduler::F_B_Scheduling() {
+void MLQScheduler::F_B_Scheduling() {
     std::cout << "Feedback Scheduling\n";
 }
 
-void MLFQScheduler::MLFQ_Scheduling() {
+void MLQScheduler::MLQ_Scheduling() {
     std::cout << "Multilevel Feedback Queue Scheduling\n";
 }

@@ -1,7 +1,7 @@
 #include "WRRScheduler.h"
 #include "EDFScheduler.h"
 #include "FBScheduler.h"
-#include "MLFQScheduler.h"
+#include "MLQScheduler.h"
 #include <iostream>
 
 void displayMenu() {
@@ -18,7 +18,7 @@ int main() {
     WRRScheduler wrr;
     EDFScheduler edf;
     FBScheduler fb;
-    MLFQScheduler mlfq;
+    MLFQScheduler mlq;
 
     SchedulingAlgorithm* scheduler = nullptr;
 
@@ -41,8 +41,8 @@ int main() {
                 scheduler->F_B_Scheduling();
                 break;
             case 4:
-                scheduler = &mlfq;
-                scheduler->MLFQ_Scheduling();
+                scheduler = &mlq;
+                scheduler->MLQ_Scheduling();
                 break;
             case 5:
                 std::cout << "Exiting...\n";

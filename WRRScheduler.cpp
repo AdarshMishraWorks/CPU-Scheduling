@@ -48,6 +48,6 @@ void WRRScheduler::F_B_Scheduling() {
     std::cout << "Feedback Scheduling\n";
 }
 
-void WRRScheduler::MLFQ_Scheduling() {
+void WRRScheduler::MLQ_Scheduling() {
     std::cout << "Multilevel Feedback Queue Scheduling\n";
 }
