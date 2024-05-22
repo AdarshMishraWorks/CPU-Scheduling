@@ -12,4 +12,4 @@ public:
     void MLQ_Scheduling() override;
 };
 
-#endif // MLFQ_SCHEDULER_H
+#endif // MLQ_SCHEDULER_H
