@@ -4,7 +4,7 @@
 #include "SchedulingAlgorithm.h"
 #include <iostream>
 
-class MLFQScheduler : public SchedulingAlgorithm {
+class MLQScheduler : public SchedulingAlgorithm {
 public:
     void WRR_Scheduling() override;
     void EDF_Scheduling() override;
