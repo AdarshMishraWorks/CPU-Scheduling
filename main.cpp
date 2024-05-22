@@ -18,7 +18,7 @@ int main() {
     WRRScheduler wrr;
     EDFScheduler edf;
     FBScheduler fb;
-    MLFQScheduler mlq;
+    MLQScheduler mlq;
 
     SchedulingAlgorithm* scheduler = nullptr;
 
