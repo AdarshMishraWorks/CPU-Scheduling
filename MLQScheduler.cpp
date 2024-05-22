@@ -14,4 +14,16 @@ void MLQScheduler::F_B_Scheduling() {
 
 void MLQScheduler::MLQ_Scheduling() {
     std::cout << "Multilevel Feedback Queue Scheduling\n";
+        
+        for (int i = 0; i < queues.size(); ++i) {
+            std::cout << "Queue " << i << ":\n";
+            while (!queues[i].empty()) {
+                Process p = queues[i].front();
+                queues[i].pop();
+                std::cout << "Processing " << p.name << " (PID: " << p.pid << ", Priority: " << p.priority << ")\n";
+                
+                // Simulate processing time, demote priority if needed
+                // For simplicity, we won't demote priority in this example
+            }
+        }
 }
