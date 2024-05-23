@@ -18,7 +18,6 @@ int main() {
     WRRScheduler wrr;
     EDFScheduler edf;
     FBScheduler fb;
-    MLQScheduler mlq;
 
     SchedulingAlgorithm* scheduler = nullptr;
 
@@ -41,8 +40,7 @@ int main() {
                 scheduler->F_B_Scheduling();
                 break;
             case 4:
-                scheduler = &mlq;
-                scheduler->MLQ_Scheduling();
+                executeScheduler();
                 break;
             case 5:
                 std::cout << "Exiting...\n";

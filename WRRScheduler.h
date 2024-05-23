@@ -9,7 +9,7 @@ public:
     void WRR_Scheduling() override;
     void EDF_Scheduling() override;
     void F_B_Scheduling() override;
-    void MLQ_Scheduling() override;
+    void MLQScheduler() override;
 
     struct Process {
         int id;
