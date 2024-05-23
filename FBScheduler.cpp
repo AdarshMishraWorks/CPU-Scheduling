@@ -10,15 +10,33 @@ void FBScheduler::EDF_Scheduling() {
 
 void FBScheduler::F_B_Scheduling() {
     std::cout << "Foreground-Background Scheduling\n";
-    
-    // Adding some sample processes
-    addForegroundProcess(5);
-    addForegroundProcess(3);
-    addBackgroundProcess(8);
-    addBackgroundProcess(6);
-    addForegroundProcess(2);
-    
-    executeProcesses();
+
+    int fgCount, bgCount;
+    std::cout << "Enter the number of foreground processes: ";
+    std::cin >> fgCount;
+
+    int fgBurstTimes[MAX_PROCESSES]; // Array to store foreground burst times
+
+    for (int i = 0; i < fgCount; ++i) {
+        int burstTime;
+        std::cout << "Enter burst time for foreground process " << i + 1 << ": ";
+        std::cin >> burstTime;
+        addForegroundProcess(burstTime, fgBurstTimes, i);
+    }
+
+    std::cout << "Enter the number of background processes: ";
+    std::cin >> bgCount;
+
+    int bgBurstTimes[MAX_PROCESSES]; // Array to store background burst times
+
+    for (int i = 0; i < bgCount; ++i) {
+        int burstTime;
+        std::cout << "Enter burst time for background process " << i + 1 << ": ";
+        std::cin >> burstTime;
+        addBackgroundProcess(burstTime, bgBurstTimes, i);
+    }
+
+    executeProcesses(fgBurstTimes, bgBurstTimes, fgCount, bgCount);
 }
 
 void FBScheduler::MLQ_Scheduling() {
@@ -26,11 +44,10 @@ void FBScheduler::MLQ_Scheduling() {
 }
 
 
-// Method to add a foreground process
-void FBScheduler::addForegroundProcess(int burstTime) {
+void FBScheduler::addForegroundProcess(int burstTime, int fgBurstTimes[], int index) {
     if (fgCount < MAX_PROCESSES) {
         foregroundProcesses[fgCount] = fgCount;  // Process ID
-        foregroundBurstTimes[fgCount] = burstTime;
+        fgBurstTimes[index] = burstTime;
         fgCount++;
     } else {
         std::cout << "Foreground process queue is full.\n";
@@ -38,10 +55,10 @@ void FBScheduler::addForegroundProcess(int burstTime) {
 }
 
 // Method to add a background process
-void FBScheduler::addBackgroundProcess(int burstTime) {
+void FBScheduler::addBackgroundProcess(int burstTime, int bgBurstTimes[], int index) {
     if (bgCount < MAX_PROCESSES) {
         backgroundProcesses[bgCount] = bgCount;  // Process ID
-        backgroundBurstTimes[bgCount] = burstTime;
+        bgBurstTimes[index] = burstTime;
         bgCount++;
     } else {
         std::cout << "Background process queue is full.\n";
@@ -49,17 +66,16 @@ void FBScheduler::addBackgroundProcess(int burstTime) {
 }
 
 // Method to execute the processes
-void FBScheduler::executeProcesses() {
+void FBScheduler::executeProcesses(int fgBurstTimes[], int bgBurstTimes[], int fgCount, int bgCount) {
     std::cout << "Executing Foreground Processes:\n";
     for (int i = 0; i < fgCount; ++i) {
         std::cout << "Process ID: " << foregroundProcesses[i] 
-                  << ", Burst Time: " << foregroundBurstTimes[i] << " units\n";
+                  << ", Burst Time: " << fgBurstTimes[i] << " units\n";
     }
 
     std::cout << "\nExecuting Background Processes:\n";
     for (int i = 0; i < bgCount; ++i) {
         std::cout << "Process ID: " << backgroundProcesses[i] 
-                  << ", Burst Time: " << backgroundBurstTimes[i] << " units\n";
+                  << ", Burst Time: " << bgBurstTimes[i] << " units\n";
     }
 }
-

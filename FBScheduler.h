@@ -19,9 +19,9 @@ private:
     int fgCount = 0;                               // Counter for the number of foreground processes
     int bgCount = 0;                               // Counter for the number of background processes
 
-    void addForegroundProcess(int burstTime);      // Method to add a foreground process
-    void addBackgroundProcess(int burstTime);      // Method to add a background process
-    void executeProcesses();   
+    void addForegroundProcess(int burstTime, int fgBurstTimes[], int index);  // Method to add a foreground process
+    void addBackgroundProcess(int burstTime, int bgBurstTimes[], int index);  // Method to add a background process
+    void executeProcesses(int fgBurstTimes[], int bgBurstTimes[], int fgCount, int bgCount); // Method to execute the processes 
 };
 
 #endif // FB_SCHEDULER_H
