@@ -6,4 +6,4 @@ Earliest Deadline First (EDF) Scheduling: In EDF scheduling, each process is ass
 
 Foreground-Background Scheduling: This scheme divides processes into two categories: foreground and background. Foreground processes are given priority and are scheduled preemptively, while background processes are scheduled only when no foreground processes are ready to run.
 
-Multi-Level Feedback Queue Scheduling (MLFQ): This is an extension of multi-level queue scheduling where processes can move between queues based on their behavior. If a process uses too much CPU time, it may be moved to a lower-priority queue. Conversely, if it uses little CPU time, it may be moved to a higher-priority queue.
+Multilevel Queue Scheduling is a CPU scheduling technique where processes are divided into multiple queues based on their priority or other criteria. Each queue has its own scheduling algorithm, and processes are permanently assigned to one queue. This method allows the system to handle different types of processes more efficiently by applying different scheduling strategies to each queue.
