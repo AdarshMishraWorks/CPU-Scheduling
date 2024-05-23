@@ -8,8 +8,8 @@ void displayMenu() {
     std::cout << "\nScheduler Menu:\n";
     std::cout << "1. Weighted Round Robin Scheduling\n";
     std::cout << "2. EDF Scheduling\n";
-    std::cout << "3. Feedback Scheduling\n";
-    std::cout << "4. Multilevel Feedback Queue Scheduling\n";
+    std::cout << "3. Foreground-Background Scheduling\n";
+    std::cout << "4. Multilevel Queue Scheduling\n";
     std::cout << "5. Exit\n";
     std::cout << "Enter your choice: ";
 }
