@@ -21,7 +21,7 @@ void FBScheduler::F_B_Scheduling() {
     executeProcesses();
 }
 
-void FBScheduler::MLQ_Scheduling() {
+void FBScheduler::MLQScheduler() {
     std::cout << "Multilevel Feedback Queue Scheduling\n";
 }
 

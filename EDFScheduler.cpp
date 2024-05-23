@@ -49,7 +49,7 @@ void EDFScheduler::F_B_Scheduling() {
     std::cout << "Feedback Scheduling\n";
 }
 
-void EDFScheduler::MLQ_Scheduling() {
+void EDFScheduler::MLQScheduler() {
     std::cout << "Multilevel Feedback Queue Scheduling\n";
 }
 
