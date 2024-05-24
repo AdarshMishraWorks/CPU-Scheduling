@@ -9,4 +9,4 @@ public:
     virtual void MLQScheduler() = 0;
 };
 
-#endif // SCHEDULING_ALGORITHM_H
+#endif 

@@ -27,19 +27,16 @@ void EDFScheduler::EDF_Scheduling() {
         int currentTime = 0;
 
         while (currentTime < 150) {
-            // Determine which process should run next based on deadlines
             if (p1.deadline <= currentTime && p1.remainingTime > 0) {
                 executeProcess(&p1, currentTime);
             } else if (p2.deadline <= currentTime && p2.remainingTime > 0) {
                 executeProcess(&p2, currentTime);
             } else {
-                // No process is ready, wait until the next deadline
                 int nextDeadline = std::min(p1.deadline, p2.deadline);
                 std::cout << "Waiting until next deadline: " << nextDeadline << std::endl;
                 currentTime = nextDeadline;
             }
 
-            // Update deadlines and reset remaining time if necessary
             updateCriticalPoint(&p1, currentTime);
             updateCriticalPoint(&p2, currentTime);
         }

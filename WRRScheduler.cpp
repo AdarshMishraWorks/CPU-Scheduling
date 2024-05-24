@@ -7,7 +7,7 @@ void WRRScheduler::WRR_Scheduling() {
         std::cout << "Enter the number of processes: ";
         std::cin >> numProcesses;
 
-        Process processes[10]; // Fixed size array to store processes (maximum of 10 processes)
+        Process processes[10]; 
         for (int i = 0; i < numProcesses; ++i) {
             processes[i].id = i + 1;
             std::cout << "Enter weight and burst time for process " << processes[i].id << ": ";
@@ -15,7 +15,7 @@ void WRRScheduler::WRR_Scheduling() {
             processes[i].remainingTime = processes[i].burstTime;
         }
 
-        int quantum = 2;  // Base quantum time slice
+        int quantum = 2;  
 
         bool done;
         do {
@@ -26,7 +26,7 @@ void WRRScheduler::WRR_Scheduling() {
                 int weightedQuantum = quantum * p.weight;
 
                 if (p.remainingTime > 0) {
-                    done = false;  // There is a pending process
+                    done = false;  
 
                     if (p.remainingTime > weightedQuantum) {
                         std::cout << "Process " << p.id << " runs for " << weightedQuantum << " units\n";

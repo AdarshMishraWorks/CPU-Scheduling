@@ -32,7 +32,6 @@ private:
         }
     };
 
-    // Execute process for a certain time period
     void executeProcess(Process* process, int &currentTime) {
         int executionTime = std::min(process->remainingTime, process->deadline - currentTime);
         std::cout << "Time " << currentTime << " - " << currentTime + executionTime
@@ -41,7 +40,6 @@ private:
         process->remainingTime -= executionTime;
     }
 
-    // Update the deadline and reset remaining time if necessary
     void updateCriticalPoint(Process* process, int currentTime) {
         if (currentTime >= process->deadline) {
             process->reset();

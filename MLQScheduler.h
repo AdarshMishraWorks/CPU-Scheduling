@@ -15,7 +15,7 @@ public:
     int pid; // Process ID
     int arrivalTime;
     int burstTime;
-    int priority; // Priority level (0 = highest priority)
+    int priority; 
     int startTime;
     int finishTime;
     int remainingTime;
